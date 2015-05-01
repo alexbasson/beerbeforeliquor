@@ -20,7 +20,19 @@ angular.module('beerBeforeLiquorApp')
       } else if (0 <= time && time < 0.5) {
         return 2 * time;
       } else if (0.5 <= time && time < 1.0) {
-        return -2 * time + 2;
+        return -(1.0 / (1.0 - 0.5)) * (time - 1.0);
+      } else {
+        return 0.0;
+      }
+    };
+
+    $scope.liquor = function(time) {
+      if (time < 0) {
+        return 0.0;
+      } else if (0 <= time && time < 0.1) {
+        return 10 * time;
+      } else if (0.1 <= time && time < 1.0) {
+        return -(1.0 / (1.0 - 0.1)) * (time - 1.0);
       } else {
         return 0.0;
       }
