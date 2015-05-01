@@ -17,12 +17,6 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  describe('x-coordinates', function() {
-    it('should return an range from zero to 3, by halves', function() {
-      expect(scope.timeValues).toEqual([0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0]);
-    });
-  });
-
   describe('beer function', function() {
     context('when time < 0.5', function() {
       it('goes from 0 to 1 linearly', function() {
